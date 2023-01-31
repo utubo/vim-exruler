@@ -20,14 +20,14 @@ vim-exruler is a Vim plugin powerfull(?) ruler.
   g:exruler = {}
 
   # require nerd fonts
-  g:exruler.head = "\ue0bc"
-  g:exruler.tail = "\ue0be"
-  g:exruler.sep = "\ue0bc"
-  g:exruler.sub = ["\ue0b9", "\ue0bb"]
+  # g:exruler.head = "\ue0bc"
+  # g:exruler.tail = "\ue0be"
+  # g:exruler.sep = "\ue0bc"
+  # g:exruler.sub = ["\ue0b9", "\ue0bb"]
 
   # If you want simple.
-  g:exruler.format = "%<%c:%l"
-  g:exruler.width = 15
+  # g:exruler.format = "%<%c:%l"
+  # g:exruler.width = 15
   ```
 
 ## INTERFACE
