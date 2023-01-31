@@ -17,10 +17,8 @@ vim-exruler is a Vim plugin powerfull(?) ruler.
   ⋮
   dein#add('utubo/vim-exruler')
   ⋮
-  g:exruler = get(g:, 'exruler', {})
-  g:exruler.format = '%t %m%r%=%|%3l:%-2c%|%{&ff} %{&fenc} %L'
-  # require nerd fonts
   g:exruler = {}
+  # require nerd fonts
   g:exruler.head = "\ue0bc"
   g:exruler.tail = "\ue0be"
   g:exruler.sep = "\ue0bc"
