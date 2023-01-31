@@ -22,7 +22,7 @@ vim-exruler is a Vim plugin powerfull(?) ruler.
   g:exruler.head = "\ue0bc"
   g:exruler.tail = "\ue0be"
   g:exruler.sep = "\ue0bc"
-  g:exruler.sub = ["\ue0b9", "\ue0b9"]
+  g:exruler.sub = ["\ue0b9", "\ue0bb"]
   ```
 
 ## INTERFACE
