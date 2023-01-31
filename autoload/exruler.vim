@@ -161,10 +161,8 @@ enddef
 export def UpdateFormat()
   w:exruler = get(w:, 'exruler', NewWinVal())
   const width = g:exruler.width ==# 0 ? '' : $'{max([1, min([&columns / 2, g:exruler.width])])}'
-  var format = g:exruler.format
-        ->substitute('%bufinfo', '%{exruler#BufInfo()}', 'g')
-  var lt_rt = format->split('%=')
-  format = lt_rt[0]->substitute('%|', '%{exruler.sub[0]}', 'g') ..
+  var lt_rt = g:exruler.format->split('%=')
+  var format = lt_rt[0]->substitute('%|', '%{exruler.sub[0]}', 'g') ..
     '%=' ..
     get(lt_rt, 1, '')->substitute('%|', '%{exruler.sub[1]}', 'g')
   if g:exruler.sep ==# ' '
