@@ -68,8 +68,8 @@ Update ruler.
   see g:exruler.mode
 - `width`  
   the width of ruler.  
-  `0` is half of screen width.  
-  default is `0`
+  max is half of screen width.  
+  default is `999`
 
 #### `g:exruler.mode`
 see `:help mode()`.
