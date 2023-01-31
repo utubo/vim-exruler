@@ -2,6 +2,10 @@
 
 ## INTRODUCTION
 
+vim-exruler is a Vim plugin powerfull(?) ruler.
+
+<img width="600" src="https://user-images.githubusercontent.com/6848636/215660395-64e0d920-f365-4444-8405-4ec1852990ee.png">
+
 ## USAGE
 ### Require
 - vim9script
