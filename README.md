@@ -53,7 +53,7 @@ Update ruler.
   the char of the separator of the mode.
 - `sub`  
   the char of the sub-separators.  
-  as [<left side>, <right side>]
+  as [left, right]
   default is [`|`, `|`]
 - `format`  
   the format of ruler.  
