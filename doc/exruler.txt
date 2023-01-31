@@ -1,0 +1,145 @@
+*exruler.txt*
+
+Author  : utubo
+License : MIT license  {{{
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+}}}
+
+==============================================================================
+CONTENTS						*exruler-contents*
+
+INTRODUCTION			|exruler-introduction|
+USAGE				|exruler-usage|
+INTERFACE			|exruler-interface|
+  VARIABLES			  |exruler-variables|
+  COLORS			  |exruler-colors|
+
+
+==============================================================================
+INTRODUCTION						*exruler-introduction*
+
+vim-*exruler* is a Vim plugin powerfull(?) ruler.
+
+Latest version:
+https://github.com/utubo/vim-exruler
+
+
+==============================================================================
+USAGE							*exruler-usage*
+
+Require
+	vim9script
+
+Install
+
+	Example of `.vimrc`
+>
+		vim9script
+		⋮
+		dein#add('utubo/vim-exruler')
+		⋮
+		g:exruler = get(g:, 'exruler', {})
+		g:exruler.format = '%t %m%r%=%|%3l:%-2c%|%{&ff} %{&fenc} %L'
+		# require nerd fonts
+		g:exruler = {}
+		g:exruler.head = "\ue0bc"
+		g:exruler.tail = "\ue0be"
+		g:exruler.sep = "\ue0bc"
+		g:exruler.sub = ["\ue0b9", "\ue0b9"]
+<
+
+==============================================================================
+INTERFACE						*exruler-interface*
+
+exruler#Update()					*exruler#Update*
+	Update ruler.
+
+------------------------------------------------------------------------------
+VARIABLES						*exruler-variables*
+
+g:exruler						*g:exruler*
+	`g:exruler` is dictionaly.
+		`at_start`	number.
+				`0`: prevent start exruler at `VimEnter`.
+				default is `1`.
+		`head`		the char of left of ruler.
+		`tail`		the char of right of ruler.
+		`sep`		the char of the separator of the mode.
+		`sub`		the list of the sub-separators.
+				as [<left side>, <right side>]
+				default is ['|', '|']
+		`format`	the format of ruler.
+				see `:help statusline` .
+				Specials for vim-exruler
+				| -   Sub-separator
+				defailt is
+				`%t %m%r%=%| %{&fenc} %{&ff} %| %4l:%-2c`
+		`mode`		the names of mode.
+				see g:exruler.mode
+
+g:exruler.mode					*g:exruler.mode*
+	see `:help mode()` .
+>
+	# default
+	g:exruler.mode = {
+		n:	'N',
+		v:	'V',
+		V:	'VL',
+		'^V':	'VB',
+		s:	'S',
+		S:	'SL',
+		'^S':	'SB',
+		i:	'I',
+		R:	'R',
+		c:	'C',
+		r:	'P',
+		t:	'T',
+		'!':	'!',
+		'*':	'*', # for unknown mode.
+		'NC':	'-', # for not-current windows.
+	}
+<
+
+------------------------------------------------------------------------------
+COLORS							*exruler-colors*
+	Base
+	Hilight group		Default color		Note
+	ExRuler			StatusLine
+
+	The mode colors.
+	Hilight group		Default color		Note
+	ExRulerNormal		ToolBarButton
+	ExRulerVisual		Visual
+	ExRulerVisualLine	VisualNOS
+	ExRulerVisualBlock	link to ExRulerVisualLine
+	ExRulerSelect		DiffChange
+	ExRulerSelectLine	link to ExRulerSelect
+	ExRulerSelectBlock	link to ExRulerSelect
+	ExRulerInsert		DiffAdd
+	ExRulerReplace		DiffChange
+	ExRulerCommand		WildMenu
+	ExRulerPrompt		Search
+	ExRulerTerm	 	StatusLineTerm
+	ExRulerShell	 	StatusLineTermNC
+	ExRulerModeNC		StatusLineNC		for not-current windows.
+	ExRulerOther	 	link to ExRulerModeNC	for unknown mode.
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
