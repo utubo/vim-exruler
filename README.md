@@ -18,11 +18,16 @@ vim-exruler is a Vim plugin powerfull(?) ruler.
   dein#add('utubo/vim-exruler')
   ⋮
   g:exruler = {}
+
   # require nerd fonts
   g:exruler.head = "\ue0bc"
   g:exruler.tail = "\ue0be"
   g:exruler.sep = "\ue0bc"
   g:exruler.sub = ["\ue0b9", "\ue0bb"]
+
+  # If you want simple.
+  g:exruler.format = "%<%c:%l"
+  g:exruler.width = 15
   ```
 
 ## INTERFACE
@@ -61,6 +66,10 @@ Update ruler.
 - `mode`  
   the names of mode.  
   see g:exruler.mode
+- `width`  
+  the width of ruler.  
+  `0` is half of screen width.  
+  default is `0`
 
 #### `g:exruler.mode`
 see `:help mode()`.
