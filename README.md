@@ -26,7 +26,7 @@ vim-exruler is a Vim plugin powerfull(?) ruler.
   # g:exruler.sub = ["\ue0b9", "\ue0bb"]
 
   # If you want simple.
-  # g:exruler.format = "%<%=%c:%l"
+  # g:exruler.format = "%<%=%l:%-c"
   # g:exruler.width = 15
   ```
 

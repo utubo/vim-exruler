@@ -63,7 +63,7 @@ Install
 		# g:exruler.sub = ["\ue0b9", "\ue0bb"]
 
 		# If you want simple.
-		# g:exruler.format = "%<%=%c:%l"
+		# g:exruler.format = "%<%=%l:%-2c"
 		# g:exruler.width = 15
 <
 
